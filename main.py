@@ -22,9 +22,12 @@ load_dotenv()
 
 def authenticate_user(email, password, base_url):
     options = uc.ChromeOptions()
+    
     options.user_data_dir = "c:\\temp\\profile"
+    options.binary_location="/home/aziz/Downloads/chrome-linux64/chrome"
     driver = uc.Chrome(
-    options = options 
+        options=options
+      
     )  
     driver.delete_all_cookies()
     driver.get(base_url)
